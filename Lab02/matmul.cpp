@@ -28,8 +28,30 @@
  * SIZE = 500:  0.169911s
  * SIZE = 750:  0.505719s
  * SIZE = 1000: 1.16932s
+ *
+ * --------- Jupyter Notebook Timings (rounded to 6 decimal places) ----------
+ * Naive Method:
+ * SIZE = 100:  1.425035s
+ * SIZE = 250:  21.118465s
+ * SIZE = 500:  165.288769s
+ * SIZE = 750:  570.289239s
+ * SIZE = 1000: 1356.586899s
  * 
- * ------------------------------- Conclusion --------------------------------
+ * JIT Method:
+ * SIZE = 100:  0.969020s
+ * SIZE = 250:  1.158417s
+ * SIZE = 500:  1.009562s
+ * SIZE = 750:  1.262489s
+ * SIZE = 1000: 2.395387s
+ * 
+ * TensorFlow Method:
+ * SIZE = 100:  0.102480s
+ * SIZE = 250:  0.001927s
+ * SIZE = 500:  0.007290s
+ * SIZE = 750:  0.012207s
+ * SIZE = 1000: 0.042451
+ * 
+ * ------------------------------- Conclusion ---------------------------------
  * By changing the loop order (which index variable is in which loop),
  * we can significantly affect the performance of the matrix multiplication
  * without changing the algorithm. By adding -O3, we can tell the compiler to
