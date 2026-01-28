@@ -22,6 +22,12 @@
  * SIZE = 750:  1.50732s
  * SIZE = 1000: 1.51555s
  * 
+ * ------------------------------ Observations -------------------------------
+ * It appears that the times to depend somewhat on the loop ordering. With the
+ * k-j-i ordering, the times appear to be about twice as fast as the original
+ * i-j-k ordering. The j-i-k ordering appears to have similar times to the
+ * original ordering, but still slightly faster in most cases.
+ * 
  * ----------------------- With Optimization Level O3 ------------------------
  * SIZE = 100:  0.002067s
  * SIZE = 250:  0.031677s
@@ -29,6 +35,19 @@
  * SIZE = 750:  0.505719s
  * SIZE = 1000: 1.16932s
  *
+ * ------------------------------- Conclusion ---------------------------------
+ * By changing the loop order (which index variable is in which loop),
+ * we can significantly affect the performance of the matrix multiplication
+ * without changing the algorithm. In C++, arrays are row-order, and thus it's
+ * faster to access a row than a column of data in C++. By indexing rows first
+ * (i.e., indices i and k), we can speed up access time and avoid accessing j
+ * (which is only used for column access) until we truly need to.
+ * 
+ * In regards to compiler optimization, By adding -O3, we can tell the compiler
+ * to aggressivley inline functions and modify the way loops are executed 
+ * (via loop vectorization or unrolling) to improve performance and avoid slow
+ * jump instructions.
+ * 
  * --------- Jupyter Notebook Timings (rounded to 6 decimal places) ----------
  * Naive Method:
  * SIZE = 100:  1.425035s
@@ -51,12 +70,6 @@
  * SIZE = 750:  0.012207s
  * SIZE = 1000: 0.042451
  * 
- * ------------------------------- Conclusion ---------------------------------
- * By changing the loop order (which index variable is in which loop),
- * we can significantly affect the performance of the matrix multiplication
- * without changing the algorithm. By adding -O3, we can tell the compiler to
- * make optimizations like inlining functions and modifying the way loops are
- * executed to improve performance.
  */
 
 #include <iostream>
