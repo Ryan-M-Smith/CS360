@@ -1,12 +1,10 @@
 (defun factorial (n)
   "Take the factorial of a number n."
   (cond
-      ((= n 0) 1)
-      ((= n 1) 1)
-      ((> n 1) (* n (factorial (- n 1))))
-      ((< n 0) NIL)
-  )
-)
+    ((= n 0) 1)
+    ((= n 1) 1)
+    ((> n 1) (* n (factorial (- n 1))))
+    ((< n 0) nil)))
 
 (print (factorial 0))     ; 1
 (print (factorial 1))     ; 1
