@@ -15,8 +15,8 @@
  * 
  * LISP code is expressive and concise, as it removes the need to store intermediate
  * states or create local variables. Imperative languages like C++ require explicit
- * flow and state control, which leads to larger files but code that is often clearler
- * and easier to follow for developers familair with the syntax.
+ * flow and state control, which leads to larger files but code that is often clearer
+ * and easier to follow for developers familiar with the syntax.
  * 
  * C++ compiles to run directly on hardware, offering low-level control over memory,
  * program execution, and high performance. LISP's abstraction of program state and
