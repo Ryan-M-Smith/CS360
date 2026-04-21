@@ -1,0 +1,2 @@
+# Mark .st files as Smalltalk source code
+*.st linguist-language=Smalltalk
