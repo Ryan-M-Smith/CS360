@@ -21,7 +21,7 @@ myArray printNl !
 1 to: 15 do: [:i | (myArray at: i) printNl] !
 
 "Output the array in descending (reverse) order, using to: do: iteration."
-'Output array in descensing order' printNl !
+'Output array in descending order' printNl !
 15 to: 1 by: -1 do: [:i | (myArray at: i) printNl] !
 
 "Print out only the elements in the array which end in 4 (two ways)."
