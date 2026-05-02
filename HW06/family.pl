@@ -1,5 +1,5 @@
 /**
- * Filename: perennial_garden.pl
+ * Filename: family.pl
  * Description: HW06 question 2
  * Author: Ryan Smith <smithrm23@juniata.edu>
  */
