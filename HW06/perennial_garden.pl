@@ -18,6 +18,7 @@ type(daisy, annual).
 perennial_garden(F) :- flower(F), type(F, perennial).
 
 main :-
+	% Test case - print all flowers which could be in a perennial garden
 	trace,
 	perennial_garden(F),
 	write(F), nl,
